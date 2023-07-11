@@ -1,0 +1,75 @@
+/** Department Store:
+Perfume (110) (45)
+Lipsticks (250) (25)
+Handbags (50) (10)
+Makeup Brushes (500) (20) 
+Blouses (60) (35)
+Skirts (45) (30)
+Jackets (70) (65) 
+Shoes (200) (150) 
+Necklaces (100) (35) 
+Bracelets (50) (35)
+Rings (35) (20)
+Face Powder (40) (50)
+Blush (60) (35) 
+Mascara (80) (25)
+Eyeshadow Palettes (50) (65)
+**/
+
+CREATE TABLE DepartmentStore (id INTEGER PRIMARY KEY, item TEXT, quantity INTEGER, price INTEGER, section TEXT ); 
+
+INSERT INTO DepartmentStore VALUES (2, "Perfume", 110, 45, "Cosmetics" );
+INSERT INTO DepartmentStore VALUES (3, "Lipsticks", 250, 25, "Cosmetics" ); 
+INSERT INTO DepartmentStore VALUES (4, "Handbags", 50, 110, "Accessories" ); 
+INSERT INTO DepartmentStore VALUES (5, "Makeup Brushes", 500, 20, "Cosmetics" ); 
+INSERT INTO DepartmentStore VALUES (6, "Blouses", 60, 35, "Clothing" ); 
+INSERT INTO DepartmentStore VALUES (7, "Skirts", 45, 30, "Clothing" ); 
+INSERT INTO DepartmentStore VALUES (8, "Jackets", 70, 65, "Clothing" ); 
+INSERT INTO DepartmentStore VALUES (9, "Shoes", 200, 150, "Accessories" );
+INSERT INTO DepartmentStore VALUES (10, "Necklaces", 100, 35, "Accessories" ); 
+INSERT INTO DepartmentStore VALUES (11, "Bracelets", 50, 35, "Accessories" ); 
+INSERT INTO DepartmentStore VALUES (12, "Rings", 35, 20, "Accessories"); 
+INSERT INTO DepartmentStore VALUES (13, "Face Powder", 40, 50, "Cosmetics"); 
+INSERT INTO DepartmentStore VALUES (14, "Blush", 60, 35,  "Cosmetics" ); 
+INSERT INTO DepartmentStore VALUES (15, "Mascara", 80, 25, "Cosmetics" ); 
+INSERT INTO DepartmentStore VALUES (16, "Eyeshadow Palettes", 50, 65, "Cosmetics" );
+
+--display the database ordered by price. 
+SELECT * FROM DepartmentStore WHERE Price > 1 ORDER BY Price;
+
+--what is the average price of an item from the cosmetics section?
+SELECT AVG(price) "avg cosmetics item price" 
+FROM DepartmentStore 
+WHERE section='Cosmetics';
+
+--what are the 5 most expensive accessories you can purchase?
+SELECT item, price
+FROM DepartmentStore
+WHERE section='Accessories'
+ORDER BY price desc
+limit 5;
+
+--How much total inventory does the Department Store have? 
+SELECT SUM(quantity) 
+FROM DepartmentStore
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
